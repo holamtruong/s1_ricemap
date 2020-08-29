@@ -1,5 +1,5 @@
 # RICE CROP MONITORING USING SENTINEL-1
-We develop this tool to automate the Mekong Delta rice mapping. We hope our data will help in rice monitoring and yield prediction. The map results will be published freely on the internet. You can get the map service via our API. 
+We develop this tool to automate the Mekong Delta rice mapping. We hope our data will help to rice monitoring and yield prediction. The map results will be published freely on the internet. You can get the map service via our API. 
 
 Contact us: https://www.facebook.com/hcm.stac
 
