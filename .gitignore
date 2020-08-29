@@ -1,3 +1,20 @@
-venv/*
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Environments
+venv/
+
+
+# Run data
 input/*
 output/*
+
+# Pycharm config
+.idea
