@@ -25,6 +25,7 @@ python-dateutil==2.8.1
 pytz==2020.1
 requests==2.24.0
 Rtree @ file:///C:/Users/holam/pipwin/Rtree-0.9.4-cp38-cp38-win_amd64.whl
+schedule==0.6.0
 Shapely==1.7.1
 six==1.15.0
 soupsieve==2.0.1

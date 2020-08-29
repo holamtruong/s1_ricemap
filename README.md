@@ -26,7 +26,7 @@ Contact us: https://www.facebook.com/hcm.stac
     pip install -r requirements.txt
  
 ### Show information about packages from the requiements.txt
-    $pip show <packagename>
+    pip show <packagename>
     
     
 ### Check GDAL version
