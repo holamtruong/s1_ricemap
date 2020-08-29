@@ -38,7 +38,7 @@ Contact us: https://www.facebook.com/hcm.stac
     
 ## License - ISC
 
-Copyright (c) 2020. 
+Copyright (c) 2020 - STAC team.
 
 Permission to use, copy, modify, and/or distribute this software for any purpose
 with or without fee is hereby granted, provided that the above copyright notice
