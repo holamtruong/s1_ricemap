@@ -29,10 +29,12 @@ Contact us: https://www.facebook.com/hcm.stac
     pip show <packagename>
     
     
-### Check GDAL version
+### Check GDAL version in Python
     import osgeo.gdal
     print(osgeo.gdal.__version__)
-
+	
+### Check GDAL version in commandline	
+	gdalinfo --version
     
     
     
