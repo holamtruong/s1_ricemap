@@ -15,7 +15,7 @@ shp_clip = 'sample_data/shp/bentre_town.shp'
 
 # clip all the selected raster files with the Warp option from GDAL:
 for image in imgList:
-    options = gdal.WarpOptions(cutlineDSName=shp_clip, cropToCutline=True)
+    options = gdal.WarpOptions(cutlineDSName=shp_clip, cropToCutline=True)  
     result_img = gdal.Warp(srcDSOrSrcDSTab=inputPath + image,
                            destNameOrDestDS=outputPath + image[:-4] + '_clip' + image[-4:],
                            options=options)

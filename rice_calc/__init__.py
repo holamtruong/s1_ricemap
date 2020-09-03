@@ -1,2 +1,2 @@
 # __init__.py
-print("rice map for Hau Giang")
+print("calculate rice map from Sentinel-1 data")

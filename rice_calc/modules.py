@@ -1,7 +1,19 @@
 import os
 import numpy as np
 import gdal,  osr
-import array as arr
+#import array as arr
+import argparse
+def arg_parsing():
+    parser = argparse.ArgumentParser(description='Detected rice area')
+    parser.add_argument('-i', "--input", required=True,
+                        help='Input directory')
+    parser.add_argument('-o', "--output", required=True,
+                        help='Output tif file')
+    args = parser.parse_args()
+    args = vars(args)
+    args['input'] = os.path.abspath(args['input'])
+    args['output'] = os.path.abspath(args['output'])
+    return args
 def geo_array(img):
     raster=gdal.Open(img)
     band = raster.GetRasterBand(1)

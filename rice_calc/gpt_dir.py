@@ -11,10 +11,10 @@ sp.check_call(cmd_pts)
 """
 import subprocess as sp
 import os
-import gdal, ogr
+import gdal
 def S1_process(in_path,out_path):
     gpt = 'C:/Program Files/snap/bin/gpt.exe'
-    graph_path = 'F:/DEV/s1_ricemap/rice_calc/graph_ARD.xml'
+    graph_path = 'F:/DEV/s1_ricemap/rice_calc/graph_ARD_20.xml'
     shp='F:/DEV/s1_ricemap/sample_data/shp/tile.shp'
     file_list=[img for img in os.listdir(in_path) if img[-4:] == '.zip']
     for i in range(0,len(file_list)):

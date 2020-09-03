@@ -15,7 +15,7 @@
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
       <orbitType>Sentinel Precise (Auto Download)</orbitType>
       <polyDegree>3</polyDegree>
-      <continueOnFail>false</continueOnFail>
+      <continueOnFail>true</continueOnFail>
     </parameters>
   </node>
   <node id="Multilook">
@@ -25,8 +25,8 @@
     </sources>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
       <sourceBands/>
-      <nRgLooks>10</nRgLooks>
-      <nAzLooks>10</nAzLooks>
+      <nRgLooks>5</nRgLooks>
+      <nAzLooks>5</nAzLooks>
       <outputIntensity>true</outputIntensity>
       <grSquarePixel>true</grSquarePixel>
     </parameters>
@@ -64,7 +64,7 @@
       <demResamplingMethod>BILINEAR_INTERPOLATION</demResamplingMethod>
       <imgResamplingMethod>BILINEAR_INTERPOLATION</imgResamplingMethod>
       <pixelSpacingInMeter>50.0</pixelSpacingInMeter>
-      <pixelSpacingInDegree>4.4915764205976077E-4</pixelSpacingInDegree>
+      <pixelSpacingInDegree>1.796630568239043E-4</pixelSpacingInDegree>
       <mapProjection>PROJCS[&quot;UTM Zone 48 / World Geodetic System 1984&quot;, &#xd;
   GEOGCS[&quot;World Geodetic System 1984&quot;, &#xd;
     DATUM[&quot;World Geodetic System 1984&quot;, &#xd;
