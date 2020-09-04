@@ -12,7 +12,7 @@ def s1collect(dwl_dir,user,password,searchbox):
     today=datetime.datetime.today()
     list_file=sorted(os.listdir(dwl_dir),key=key_sort,reverse=True)
     day_end=today.strftime('%Y%m%d')
-    backday= datetime.datetime(int(list_file[0][17:21]),int(list_file[0][22:23]),int(list_file[0][24:25]))
+    backday= datetime.datetime(int(list_file[0][17:21]),int(list_file[0][21:23]),int(list_file[0][23:25]))
     day_start=backday.strftime('%Y%m%d')
     #const='-d --producttype GRD -q \"orbitdirection=Descending\" --url \"https://scihub.copernicus.eu/dhus\"'
     url = '''https://scihub.copernicus.eu/dhus'''
@@ -32,6 +32,7 @@ def main():
     box='F:/DEV/s1_ricemap/rice_calc/polygon.json'
     with open('F:/DEV/s1_ricemap/rice_calc/top_secret.TXT') as f:
         user = f.read().splitlines()
+    f.close()
     s1collect(download_path,user[0],user[1],box)
     return
 
@@ -41,6 +42,7 @@ if __name__=='__main__':
     while True:
         schedule.run_pending()
         time.sleep(1)
+  
 #schedule.every(10).seconds.do(s1collect(download_path))
 """
 schedule.every().hour.do(job)
