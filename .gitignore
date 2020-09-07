@@ -16,6 +16,7 @@ venv/
 input/*
 output/*
 download_dir/*
+result/*
 
 # Pycharm config
 .idea
