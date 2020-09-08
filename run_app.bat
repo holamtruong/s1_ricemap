@@ -1,2 +1,6 @@
+ @echo on
  CALL venv\Scripts\activate
-    schedule_run.py
+ CALL schedule_run.py
+ pause
+
+
