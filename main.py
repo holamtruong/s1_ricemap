@@ -6,7 +6,7 @@ import os
 def main():
     input_img='input'#satelite imagery input directory
     output_img='output'#output ARD directory
-    ARD.S1_process(input_img,output_img)
+    ARD.S1_process(input_img,output_img) #call gpt to processing file
     #output_img='F:/S1_gpt/out_img'
     file_list_o=[img for img in os.listdir(output_img) if img[-4:] == '.tif']
     file_list=sorted(file_list_o)
@@ -32,7 +32,6 @@ def main():
     day=None
     return
 if __name__ == "__main__":
-    #ARGS = modules.arg_parsing()
     main()
     print('Done...')            
         

@@ -1,7 +1,5 @@
-import schedule
-import time
 import datetime
-import os
+import os,sys
 import subprocess as sp
 
 def key_sort(name):
@@ -27,31 +25,13 @@ def s1collect(dwl_dir,user,password,searchbox):
         output = e.output
     return
     
-def main():   
-    download_path="F:/DEV/s1_ricemap/download_dir"
-    box='F:/DEV/s1_ricemap/rice_calc/polygon.json'
-    with open('F:/DEV/s1_ricemap/rice_calc/top_secret.TXT') as f:
+def s1_dwl(): 
+    dirname = os.path.dirname(__file__)
+    sys.path.append(os.path.realpath('..'))
+    download_path = os.path.join(dirname,"../download_dir")
+    box='polygon.json'
+    with open('top_secret.TXT') as f:
         user = f.read().splitlines()
     f.close()
     s1collect(download_path,user[0],user[1],box)
     return
-
-if __name__=='__main__':
-    #main()
-    schedule.every(1).day.at("09:00").do(main)
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
-  
-#schedule.every(10).seconds.do(s1collect(download_path))
-"""
-schedule.every().hour.do(job)
-schedule.every().day.at("10:30").do(job)
-schedule.every(5).to(10).minutes.do(job)
-schedule.every().monday.do(job)
-schedule.every().wednesday.at("13:15").do(job)
-schedule.every().minute.at(":17").do(job)
-"""
-#while True:
-#   schedule.run_pending()
-#   time.sleep(1)
