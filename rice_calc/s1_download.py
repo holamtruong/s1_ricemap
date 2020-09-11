@@ -29,8 +29,9 @@ def s1_dwl():
     dirname = os.path.dirname(__file__)
     sys.path.append(os.path.realpath('..'))
     download_path = os.path.join(dirname,"../download_dir")
-    box='polygon.json'
-    with open('top_secret.TXT') as f:
+    user_path=os.path.join(dirname,"../rice_calc/top_secret.TXT")
+    box=os.path.join(dirname,'../rice_calc/polygon.json')
+    with open(user_path) as f:
         user = f.read().splitlines()
     f.close()
     s1collect(download_path,user[0],user[1],box)

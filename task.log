@@ -1,66 +1,14 @@
-2020-09-09 11:35:29,070 - __main__ - INFO - download_anh_1
-2020-09-09 11:35:29,072 - __main__ - INFO - tienxuly
-2020-09-09 11:35:29,075 - __main__ - INFO - xu ly xong
-2020-09-09 11:35:32,079 - __main__ - INFO - download_anh_1
-2020-09-09 11:35:32,084 - __main__ - INFO - tienxuly
-2020-09-09 11:35:32,089 - __main__ - INFO - xu ly xong
-2020-09-09 11:35:35,097 - __main__ - INFO - download_anh_1
-2020-09-09 11:35:35,100 - __main__ - INFO - tienxuly
-2020-09-09 11:35:35,104 - __main__ - INFO - xu ly xong
-2020-09-09 11:35:38,108 - __main__ - INFO - download_anh_1
-2020-09-09 11:35:38,109 - __main__ - INFO - tienxuly
-2020-09-09 11:35:38,111 - __main__ - INFO - xu ly xong
-2020-09-09 11:35:41,116 - __main__ - INFO - download_anh_1
-2020-09-09 11:35:41,119 - __main__ - INFO - tienxuly
-2020-09-09 11:35:41,121 - __main__ - INFO - xu ly xong
-2020-09-09 11:35:44,125 - __main__ - INFO - download_anh_1
-2020-09-09 11:35:44,130 - __main__ - INFO - tienxuly
-2020-09-09 11:35:44,135 - __main__ - INFO - xu ly xong
-2020-09-09 11:35:47,141 - __main__ - INFO - download_anh_1
-2020-09-09 11:35:47,142 - __main__ - INFO - tienxuly
-2020-09-09 11:35:47,144 - __main__ - INFO - xu ly xong
-2020-09-09 11:35:50,146 - __main__ - INFO - download_anh_1
-2020-09-09 11:35:50,151 - __main__ - INFO - tienxuly
-2020-09-09 11:35:50,156 - __main__ - INFO - xu ly xong
-2020-09-09 11:35:53,163 - __main__ - INFO - download_anh_1
-2020-09-09 11:35:53,165 - __main__ - INFO - tienxuly
-2020-09-09 11:35:53,166 - __main__ - INFO - xu ly xong
-2020-09-09 11:35:56,170 - __main__ - INFO - download_anh_1
-2020-09-09 11:35:56,175 - __main__ - INFO - tienxuly
-2020-09-09 11:35:56,178 - __main__ - INFO - xu ly xong
-2020-09-09 11:35:59,180 - __main__ - INFO - download_anh_1
-2020-09-09 11:35:59,185 - __main__ - INFO - tienxuly
-2020-09-09 11:35:59,190 - __main__ - INFO - xu ly xong
-2020-09-09 11:36:02,194 - __main__ - INFO - download_anh_1
-2020-09-09 11:36:02,200 - __main__ - INFO - tienxuly
-2020-09-09 11:36:02,204 - __main__ - INFO - xu ly xong
-2020-09-09 14:40:24,832 - __main__ - INFO - download_anh_1
-2020-09-09 14:40:24,832 - __main__ - INFO - download_anh_1
-2020-09-09 14:40:24,833 - __main__ - INFO - tienxuly
-2020-09-09 14:40:24,833 - __main__ - INFO - tienxuly
-2020-09-09 14:40:24,835 - __main__ - INFO - xu ly xong
-2020-09-09 14:40:24,835 - __main__ - INFO - xu ly xong
-2020-09-09 14:40:27,841 - __main__ - INFO - download_anh_1
-2020-09-09 14:40:27,841 - __main__ - INFO - download_anh_1
-2020-09-09 14:40:27,842 - __main__ - INFO - tienxuly
-2020-09-09 14:40:27,842 - __main__ - INFO - tienxuly
-2020-09-09 14:40:27,844 - __main__ - INFO - xu ly xong
-2020-09-09 14:40:27,844 - __main__ - INFO - xu ly xong
-2020-09-09 14:40:27,846 - __main__ - INFO - download_anh_1
-2020-09-09 14:40:27,846 - __main__ - INFO - download_anh_1
-2020-09-09 14:40:27,847 - __main__ - INFO - tienxuly
-2020-09-09 14:40:27,847 - __main__ - INFO - tienxuly
-2020-09-09 14:40:27,849 - __main__ - INFO - xu ly xong
-2020-09-09 14:40:27,849 - __main__ - INFO - xu ly xong
-2020-09-09 14:40:30,851 - __main__ - INFO - download_anh_1
-2020-09-09 14:40:30,851 - __main__ - INFO - download_anh_1
-2020-09-09 14:40:30,854 - __main__ - INFO - tienxuly
-2020-09-09 14:40:30,854 - __main__ - INFO - tienxuly
-2020-09-09 14:40:30,857 - __main__ - INFO - xu ly xong
-2020-09-09 14:40:30,857 - __main__ - INFO - xu ly xong
-2020-09-09 14:40:30,859 - __main__ - INFO - download_anh_1
-2020-09-09 14:40:30,859 - __main__ - INFO - download_anh_1
-2020-09-09 14:40:30,861 - __main__ - INFO - tienxuly
-2020-09-09 14:40:30,861 - __main__ - INFO - tienxuly
-2020-09-09 14:40:30,863 - __main__ - INFO - xu ly xong
-2020-09-09 14:40:30,863 - __main__ - INFO - xu ly xong
+2020-09-11 16:37:00,323 - __main__ - INFO - running program
+2020-09-11 16:37:00,576 - __main__ - INFO - search and collect new images...
+2020-09-11 16:37:00,579 - __main__ - INFO - processing image...
+2020-09-11 16:39:00,242 - __main__ - INFO - running program
+2020-09-11 16:39:00,519 - __main__ - INFO - search and collect new images...
+2020-09-11 16:39:00,521 - __main__ - INFO - processing image...
+2020-09-11 16:39:53,497 - __main__ - INFO - calculating rice dos...
+2020-09-11 16:39:53,498 - __main__ - INFO - ..::Done::..
+2020-09-11 16:49:00,483 - __main__ - INFO - running program
+2020-09-11 16:49:00,747 - __main__ - INFO - search and collect new images...
+2020-09-11 16:49:00,750 - __main__ - INFO - processing image...
+2020-09-11 16:49:08,202 - __main__ - INFO - calculating rice dos...
+2020-09-11 16:49:08,203 - __main__ - INFO - ..::Done::..
+2020-09-11 16:59:00,037 - __main__ - INFO - running program
