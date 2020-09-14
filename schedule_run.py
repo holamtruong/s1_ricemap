@@ -8,32 +8,33 @@ import rice_calc.s1_download as download
 import os
 import numpy as np
 import datetime
- 
+
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
- 
+
 # create a file handler
 handler = logging.FileHandler('task.log')
 handler.setLevel(logging.DEBUG)
- 
+
 # create a logging format
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 handler.setFormatter(formatter)
- 
+
 # add the handlers to the logger
 logger.addHandler(handler)
+
 
 # Functions setup
 def download_img():
     download.s1_dwl()
-    return
+    return 1
 
 
 def preprocessing():
-    input_img='download_dir'#satelite imagery input directory
-    output_img='output'#output ARD directory
-    ARD.S1_process(input_img,output_img) #call gpt to processing file
-    return
+    input_img = 'download_dir'  # satelite imagery input directory
+    output_img = 'output'  # output ARD directory
+    ARD.S1_process(input_img, output_img)  # call gpt to processing file
+    return 1
 
 
 def cacl_rice_dos():
@@ -57,17 +58,18 @@ def cacl_rice_dos():
     file_list=sorted(os.listdir(output_img))
     out_name=os.path.join(result_path,f'{file_list[-1][0:8]}_ricemap_dos.tif')
     if os.path.exists(out_name) is True:
-        print ("No new Image, see you nexttime...")
+        print("No new Image, see you nexttime...")
+        return 1
     else:
-        day=modules.date(file_list)
-        dos=modules.calc_dos(stack_anh,rice,day)
+        day = modules.date(file_list)
+        dos = modules.calc_dos(stack_anh, rice, day)
         print('exporting rice dos map...')
-        modules.array2raster(out_name, (old_info['originX'],old_info['originY']),
-                             old_info['pixelWidth'], old_info['pixelHeight'],dos, 32648)
-        stack_anh=None
-        dos=None
-        day=None
-    return
+        modules.array2raster(out_name, (old_info['originX'], old_info['originY']),
+                             old_info['pixelWidth'], old_info['pixelHeight'], dos, 32648)
+        stack_anh = None
+        dos = None
+        day = None
+        return 1
 
 
 def quytrinh_thanhlap_ricemap():
@@ -84,13 +86,10 @@ def quytrinh_thanhlap_ricemap():
 
 # After every 1 seconds run_task() is called.
 def main(): 
-    time_run="09:00"
-    schedule.every().day.at(time_run).do(quytrinh_thanhlap_ricemap)
-    # Loop so that the scheduling task keeps on running all time.
-    while True:
-        # Checks whether a scheduled task is pending to run or not (1 seconds)
-        schedule.run_pending()
-        time.sleep(1)
-    return
+    start_time = "15:12"
+    schedule.every().day.at(start_time).do(quytrinh_thanhlap_ricemap)
+
+
 if __name__=='__main__':
     main()
+

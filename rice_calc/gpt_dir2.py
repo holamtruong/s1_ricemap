@@ -10,9 +10,8 @@ cmd_pts = [gpt,
 sp.check_call(cmd_pts)
 """
 import subprocess as sp
-import os, sys
+import os,sys
 import gdal
-
 #call gpt to processing image
 def S1_process(in_path,out_path):
     dirname = os.path.dirname(__file__)
