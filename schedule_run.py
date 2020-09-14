@@ -74,12 +74,24 @@ def cacl_rice_dos():
 
 def quytrinh_thanhlap_ricemap():
     logger.info('running program')
-    download_img()
     logger.info('search and collect new images...')
-    preprocessing()
+    check=download_img()
+    if check==1:
+        logger.info('search and collect new images successful')
+    else:
+        logger.info('collect image false')
     logger.info('processing image...')
-    cacl_rice_dos()
+    check=preprocessing()
+    if check==1:
+        logger.info('processing image successful')
+    else:
+        logger.info('processing image false')
     logger.info('calculating rice dos...')
+    check=cacl_rice_dos()
+    if check==1:
+        logger.info('calculating rice dos successful')
+    else:
+        logger.info('calculating rice dos false')
     logger.info('..::Done::..')
     print('waiting...')
 
