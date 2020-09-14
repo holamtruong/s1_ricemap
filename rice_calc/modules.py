@@ -2,10 +2,7 @@ import os
 import datetime
 import numpy as np
 import gdal,  osr
-#import array as arr
 import argparse
-from scipy.ndimage.filters import uniform_filter
-from scipy.ndimage.measurements import variance
 def arg_parsing():
     parser = argparse.ArgumentParser(description='Detected rice area')
     parser.add_argument('-i', "--input", required=True,
@@ -17,6 +14,7 @@ def arg_parsing():
     args['input'] = os.path.abspath(args['input'])
     args['output'] = os.path.abspath(args['output'])
     return args
+#read array as raster
 def geo_array(img):
     raster=gdal.Open(img)
     band = raster.GetRasterBand(1)
@@ -25,6 +23,7 @@ def geo_array(img):
     array=np.nan_to_num(array)
     raster=None
     return array
+#calculating rice or non-rice area
 def rice_map(array):
     min_array=array.min(axis=0)
     max_array=array.max(axis=0)
@@ -40,6 +39,7 @@ def rice_map(array):
                                                 np.logical_and(median_array >= -22,count<=9, count>=2)))),3,0)
     rmap=np.where(water>0,water,np.where(urban>0,urban,np.where(rice>0,rice,np.where(boundary>0,0,4))))
     return rmap
+#get image geo-info
 def get_img_info(img):
     img = gdal.Open(img)
     cols = img.RasterXSize
@@ -61,6 +61,7 @@ def get_img_info(img):
         'pixelHeight':pixelHeight,
         'projection':prj}
     return kq
+#create 3D array
 def tiftostack(file_path,file_list,cols,rows):
     bb=len(file_list)
     stack_band=np.zeros(shape=(bb,rows,cols),dtype=float)
@@ -71,10 +72,12 @@ def tiftostack(file_path,file_list,cols,rows):
         arr2dB=linear2dB(array)
         stack_band[i,:,:]=arr2dB
     return stack_band
+#convert linear value to decibel value
 def linear2dB(array):
     array_dB=np.where(array>0,10*np.log10(array),0)
     array_dB2=np.where(array_dB>-50,array_dB,0) 
     return array_dB2
+#export array to raster img
 def array2raster(newRasterFilename,
                  rasterOrigin,
                  pixelWidth,
@@ -97,6 +100,7 @@ def array2raster(newRasterFilename,
     outRaster.SetProjection(outRasterSRS.ExportToWkt())
     outband.FlushCache()
 
+#calculating rice age
 def calc_dos(stack_anh, rice,day):
     size=stack_anh.shape
     tam=np.zeros(size[0],dtype=float)
@@ -127,32 +131,32 @@ def calc_dos(stack_anh, rice,day):
                         d_start=vitri-1
                     else:
                         d_start=vitri
-                    if day[len(day)-1] - day[vitri] <=120:
-                        nss[j,i]=day[len(day)-1] - day[d_start]
+                    if int((day[len(day)-1] - day[vitri]).days) <=120:
+                        nss[j,i]=int((day[len(day)-1] - day[d_start]).days)
                     else:
                         nss[j,i]=-99
             else:
                 nss[j,i]==nss[j,i]         
     return nss
-def day2jday(date):
-     #date=datetime.datetime(int(name[0:4]),int(name[4:6]),int(name[6:8]))
-     jday=date.toordinal() + 1721425
-     return jday
-
+#extract day of image from file name
 def date(file_list):
     day=np.array([])
     for k in range(0,len(file_list)):
         date=datetime.datetime(int(file_list[k][0:4]),int(file_list[k][4:6]),int(file_list[k][6:8]))
-        jday=day2jday(date)
-        day=np.append(day,jday)
+        day=np.append(day,date)
     return day
-def lee_filter(img, size):
-    img_mean = uniform_filter(img, (size, size))
-    img_sqr_mean = uniform_filter(img**2, (size, size))
-    img_variance = img_sqr_mean - img_mean**2
-
-    overall_variance = variance(img)
-
-    img_weights = img_variance / (img_variance + overall_variance)
-    img_output = img_mean + img_weights * (img - img_mean)
-    return img_output    
+#convert array of date to string
+def strday(date_array):
+    day=np.array([])
+    for i in range(0,len(date_array)):
+        date=date_array[i].strftime('%Y%m%d')
+        day=np.append(day,date)
+    return day
+#lay gia tri gan nhat de chon ra ngay bat dau
+def find_nearest(array, value):
+    array = np.asarray(array)
+    int_arr=np.array([])
+    for i in range(0,len(array)):
+        int_arr=np.append(int_arr,int(array[i]))
+    idx = (np.abs(int_arr - value)).argmin()
+    return array[idx]

@@ -1,33 +1,54 @@
-attrs==20.1.0
-beautifulsoup4==4.9.1
+aenum==2.2.4
+altgraph==0.17
+auto-py-to-exe==2.7.8
+boto3==1.14.51
+botocore==1.17.51
+bottle==0.12.18
+bottle-websocket==0.2.9
 certifi==2020.6.20
+cffi==1.14.2
 chardet==3.0.4
 click==7.1.2
-click-plugins==1.1.1
-cligj==0.5.0
-docopt==0.6.2
-Fiona @ file:///C:/Users/holam/pipwin/Fiona-1.8.13-cp38-cp38-win_amd64.whl
-GDAL @ file:///E:/DEV/s1_ricemap/document/install_gdal_on_windows/GDAL-3.1.2-cp38-cp38-win_amd64.whl
-geopandas @ file:///C:/Users/holam/pipwin/geopandas-0.8.1-py3-none-any.whl
+cycler==0.10.0
+docutils==0.15.2
+Eel==0.12.4
+future==0.18.2
+GDAL @ file:///C:/Users/user/Downloads/GDAL-3.1.2-cp38-cp38-win_amd64.whl
+geojson==2.5.0
+geomet==0.2.1.post1
+gevent==20.6.2
+gevent-websocket==0.10.1
+greenlet==0.4.16
+html2text==2020.1.16
 idna==2.10
-Js2Py==0.70
-munch==2.5.0
-numpy @ file:///C:/Users/holam/pipwin/numpy-1.19.1%2Bmkl-cp38-cp38-win_amd64.whl
-packaging==20.4
-pandas==1.1.1
-pipwin==0.5.0
-pyjsparser==2.7.1
+jmespath==0.10.0
+kiwisolver==1.2.0
+matplotlib @ file:///C:/Users/user/Downloads/matplotlib-3.3.1-cp38-cp38-win_amd64.whl
+numpy @ file:///C:/Users/user/Downloads/numpy-1.19.1%2Bmkl-cp38-cp38-win_amd64.whl
+oauthlib==3.1.0
+pandas @ file:///C:/Users/user/Downloads/pandas-1.1.1-cp38-cp38-win_amd64.whl
+pefile==2019.4.18
+Pillow==7.2.0
+pycparser==2.20
+pyinstaller==4.0
+pyinstaller-hooks-contrib==2020.8
 pyparsing==2.4.7
-PyPrind==2.11.2
-pyproj @ file:///C:/Users/holam/pipwin/pyproj-2.6.1.post1-cp38-cp38-win_amd64.whl
-pySmartDL==1.3.3
+pyproj==2.6.1.post1
 python-dateutil==2.8.1
 pytz==2020.1
+pywin32-ctypes==0.2.0
 requests==2.24.0
-Rtree @ file:///C:/Users/holam/pipwin/Rtree-0.9.4-cp38-cp38-win_amd64.whl
+requests-oauthlib==1.3.0
+s3transfer==0.3.3
 schedule==0.6.0
+scipy @ file:///C:/Users/user/Downloads/scipy-1.5.2-cp38-cp38-win_amd64.whl
+sentinelsat==0.14
 Shapely==1.7.1
 six==1.15.0
-soupsieve==2.0.1
-tzlocal==2.1
+tifffile==2020.8.25
+tqdm==4.48.2
 urllib3==1.25.10
+utm==0.6.0
+whichcraft==0.6.1
+zope.event==4.4
+zope.interface==5.1.0

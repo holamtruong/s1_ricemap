@@ -1,10 +1,10 @@
 import datetime
 import os,sys
 import subprocess as sp
-
+#key to sort list
 def key_sort(name):
     return name[17:25]
-
+#call cmd to download
 def s1collect(dwl_dir,user,password,searchbox):
     print("Starting search and collect data...")
     today=datetime.datetime.today()
@@ -24,7 +24,7 @@ def s1collect(dwl_dir,user,password,searchbox):
     except sp.CalledProcessError as e:
         output = e.output
     return
-    
+#download image  
 def s1_dwl(): 
     dirname = os.path.dirname(__file__)
     sys.path.append(os.path.realpath('..'))

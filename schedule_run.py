@@ -6,6 +6,8 @@ import rice_calc.gpt_dir as ARD
 import rice_calc.modules as modules
 import rice_calc.s1_download as download
 import os
+import numpy as np
+import datetime
  
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -38,9 +40,18 @@ def cacl_rice_dos():
     output_img='output'
     file_list_o=[img for img in os.listdir(output_img) if img[-4:] == '.tif']
     file_list=sorted(file_list_o)
-    img_info=os.path.join(output_img,file_list[0])
+    img_info=os.path.join(output_img,file_list[-1])
     old_info = modules.get_img_info(img_info)
-    stack_anh=modules.tiftostack(output_img,file_list,old_info['cols'],old_info['rows'])
+    choose_list=np.array([])
+    listday=modules.date(file_list)
+    list_str_day=modules.strday(listday)
+    start_day=listday[-1]-datetime.timedelta(days=140)
+    start_str_day=start_day.strftime('%Y%m%d')
+    day_start=modules.find_nearest(list_str_day, int(start_str_day))
+    index=np.where(list_str_day==day_start)
+    for i in range(int(index[0]),len(list_str_day)):
+        choose_list=np.append(choose_list,file_list[i])
+    stack_anh=modules.tiftostack(output_img,choose_list,old_info['cols'],old_info['rows'])
     rice=modules.rice_map(stack_anh)
     result_path='result'
     file_list=sorted(os.listdir(output_img))
@@ -68,14 +79,18 @@ def quytrinh_thanhlap_ricemap():
     cacl_rice_dos()
     logger.info('calculating rice dos...')
     logger.info('..::Done::..')
+    print('waiting...')
 
 
 # After every 1 seconds run_task() is called.
-if __name__=='__main__':
-    schedule.every().day.at("16:59").do(quytrinh_thanhlap_ricemap)
-    print('waiting...')
+def main(): 
+    time_run="09:00"
+    schedule.every().day.at(time_run).do(quytrinh_thanhlap_ricemap)
     # Loop so that the scheduling task keeps on running all time.
     while True:
         # Checks whether a scheduled task is pending to run or not (1 seconds)
         schedule.run_pending()
         time.sleep(1)
+    return
+if __name__=='__main__':
+    main()
