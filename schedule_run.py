@@ -100,6 +100,9 @@ def quytrinh_thanhlap_ricemap():
 def main(): 
     start_time = "15:12"
     schedule.every().day.at(start_time).do(quytrinh_thanhlap_ricemap)
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
 
 
 if __name__=='__main__':
