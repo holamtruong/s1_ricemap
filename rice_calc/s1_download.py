@@ -1,17 +1,11 @@
 import datetime
 import os,sys
 import subprocess as sp
-#key to sort list
-def key_sort(name):
-    return name[17:25]
 #call cmd to download
-def s1collect(dwl_dir,user,password,searchbox):
+def s1collect(dwl_dir,day_start,user,password,searchbox):
     print("Starting search and collect data...")
-    today=datetime.datetime.today()
-    list_file=sorted(os.listdir(dwl_dir),key=key_sort,reverse=True)
-    day_end=today.strftime('%Y%m%d')
-    backday= datetime.datetime(int(list_file[0][17:21]),int(list_file[0][21:23]),int(list_file[0][23:25]))
-    day_start=backday.strftime('%Y%m%d')
+    today = datetime.datetime.today()
+    day_end = today.strftime('%Y%m%d')
     #const='-d --producttype GRD -q \"orbitdirection=Descending\" --url \"https://scihub.copernicus.eu/dhus\"'
     url = '''https://scihub.copernicus.eu/dhus'''
     cmd=['sentinelsat','-u',user,'-p',password,'-g',searchbox,
@@ -30,9 +24,13 @@ def s1_dwl():
     sys.path.append(os.path.realpath('..'))
     download_path = os.path.join(dirname,"../download_dir")
     user_path=os.path.join(dirname,"../rice_calc/top_secret.TXT")
-    box=os.path.join(dirname,'../rice_calc/polygon.json')
+    box = os.path.join(dirname,'../rice_calc/polygon.json')
+    start_path = os.path.join(dirname,"../list.data")
+    with open(start_path) as f:
+        start_day = f.read().splitlines()
+    f.close()
     with open(user_path) as f:
         user = f.read().splitlines()
     f.close()
-    s1collect(download_path,user[0],user[1],box)
+    s1collect(download_path,start_day[-1],user[0],user[1],box)
     return 'ok', download_path,user[0]

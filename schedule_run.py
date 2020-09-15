@@ -56,15 +56,14 @@ def cacl_rice_dos():
     stack_anh = modules.tiftostack(output_img, choose_list, old_info['cols'], old_info['rows'])
     rice = modules.rice_map(stack_anh)
     result_path = 'result'
-    file_list = sorted(os.listdir(output_img))
-    rs_name = f'{file_list[-1][0:8]}_ricemap_dos.tif'
+    rs_name = f'{choose_list[-1][0:8]}_ricemap_dos.tif'
     out_name = os.path.join(result_path, rs_name)
     if os.path.exists(out_name) is True:
         print("No new Image, see you nexttime...")
         check = "No new Image, see you nexttime..."
         return check
     else:
-        day = modules.date(file_list)
+        day = modules.date(choose_list)
         dos = modules.calc_dos(stack_anh, rice, day)
         print('exporting rice dos map...')
         modules.array2raster(out_name, (old_info['originX'], old_info['originY']),
@@ -82,7 +81,7 @@ def quytrinh_thanhlap_ricemap():
 
     if check1[0] == 'ok':
         logger.info('search and collect new images successful')
-        logger.info(f'downloaded and stored images in {check1[1]} with user name {check1[2]}')
+        logger.info(f'downloaded and stored temporary in {check1[1]} with user name {check1[2]}')
     else:
         logger.info('collect image false')
     logger.info('processing image...')
@@ -98,7 +97,7 @@ def quytrinh_thanhlap_ricemap():
     if check3[0] == 'ok':
         logger.info('calculating rice dos successful')
         logger.info(f'result for: {check3[2]}, start at: {check3[1]} and file name: {check3[3]}')
-        with open('list.log', 'a') as f:
+        with open('list.data', 'a') as f:
             f.write(f'{check3[3][0:8]}\n')
         f.close()
     else:
@@ -109,7 +108,7 @@ def quytrinh_thanhlap_ricemap():
 
 # After every 1 seconds run_task() is called.
 def main():
-    start_time = "13:22"
+    start_time = "09:00"
     schedule.every().day.at(start_time).do(quytrinh_thanhlap_ricemap)
     while True:
         schedule.run_pending()

@@ -29,6 +29,7 @@ def S1_process(in_path,out_path):
             file_out=file_list[i][17:25]+'_'+file_list[i][63:67]+'_AO_ML_CL_TC'+'_cut'+'{}'.format('.tif')
             check_path=os.path.join(out_path,file_name)
             check_out=os.path.join(out_path,file_out)
+            source_img=os.path.join(in_path,file_list[i])
             if os.path.exists(check_out) is True:
                 print (f"File {file_out} exist, processing next image...")
             else:
@@ -37,6 +38,7 @@ def S1_process(in_path,out_path):
                        in_name,
                        out_name]
                 sp.check_call(cmd)
+                os.remove(source_img)#remove origin file after processing
                 options = gdal.WarpOptions(cutlineDSName=shp, cropToCutline=True)
                 result_img = gdal.Warp(srcDSOrSrcDSTab=check_path,
                     destNameOrDestDS=check_out,
@@ -44,7 +46,7 @@ def S1_process(in_path,out_path):
                 result_img = None
                 with open(check_path) as f:
                     f.close()
-                os.remove(check_path) #remove origin file after processing 
+                os.remove(check_path) #remove big ARD file after crop 
     else:
         print(f'can\'t find gpt directory, please insert correct gpt in path {gpt}')
     return

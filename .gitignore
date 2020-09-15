@@ -15,7 +15,6 @@ venv/
 # Run data
 input/*
 output/*
-download_dir/*
 result/*
 
 # Pycharm config
