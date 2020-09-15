@@ -4,6 +4,11 @@ We develop this tool to automate the Mekong Delta rice mapping. We hope our data
 Contact us: https://www.facebook.com/hcm.stac
 
 
+### Install SNAP Desktop:
+    version:  esa-snap_sentinel_windows-x64_7_0.exe
+    path: C:/Program Files/snap/bin/gpt.exe
+    
+
 ### Create virtual environment
     python -m venv venv
 

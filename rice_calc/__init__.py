@@ -1,2 +1,2 @@
 # __init__.py
-print("calculate rice map from Sentinel-1 data")
+print("Open tool \' Calculate the rice maps from Sentinel-1 data\' by STAC team.")
