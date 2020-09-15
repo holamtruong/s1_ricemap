@@ -17,7 +17,7 @@ handler = logging.FileHandler('task.log')
 handler.setLevel(logging.DEBUG)
 
 # create a logging format
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 handler.setFormatter(formatter)
 
 # add the handlers to the logger
@@ -26,15 +26,15 @@ logger.addHandler(handler)
 
 # Functions setup
 def download_img():
-    download.s1_dwl()
-    return 1
+    dwl=download.s1_dwl()
+    return dwl
 
 
 def preprocessing():
     input_img = 'download_dir'  # satelite imagery input directory
     output_img = 'output'  # output ARD directory
     ARD.S1_process(input_img, output_img)  # call gpt to processing file
-    return 1
+    return 'ok'
 
 
 def cacl_rice_dos():
@@ -49,6 +49,7 @@ def cacl_rice_dos():
     start_day=listday[-1]-datetime.timedelta(days=140)
     start_str_day=start_day.strftime('%Y%m%d')
     day_start=modules.find_nearest(list_str_day, int(start_str_day))
+    day_end=list_str_day[-1]
     index=np.where(list_str_day==day_start)
     for i in range(int(index[0]),len(list_str_day)):
         choose_list=np.append(choose_list,file_list[i])
@@ -56,10 +57,12 @@ def cacl_rice_dos():
     rice=modules.rice_map(stack_anh)
     result_path='result'
     file_list=sorted(os.listdir(output_img))
-    out_name=os.path.join(result_path,f'{file_list[-1][0:8]}_ricemap_dos.tif')
+    rs_name=f'{file_list[-1][0:8]}_ricemap_dos.tif'
+    out_name=os.path.join(result_path,rs_name)
     if os.path.exists(out_name) is True:
         print("No new Image, see you nexttime...")
-        return 1
+        check="No new Image, see you nexttime..."
+        return check
     else:
         day = modules.date(file_list)
         dos = modules.calc_dos(stack_anh, rice, day)
@@ -69,36 +72,41 @@ def cacl_rice_dos():
         stack_anh = None
         dos = None
         day = None
-        return 1
+        return 'ok',str(day_start), day_end, rs_name
 
 
 def quytrinh_thanhlap_ricemap():
     logger.info('running program')
     logger.info('search and collect new images...')
-    check=download_img()
-    if check==1:
+    check1=download_img()
+    
+    if check1[0]=='ok':
         logger.info('search and collect new images successful')
+        logger.info(f'downloaded and stored images in {check1[1]} with user name {check1[2]}')
     else:
         logger.info('collect image false')
     logger.info('processing image...')
-    check=preprocessing()
-    if check==1:
+    check2=preprocessing()
+
+    if check2=='ok':
         logger.info('processing image successful')
     else:
         logger.info('processing image false')
     logger.info('calculating rice dos...')
-    check=cacl_rice_dos()
-    if check==1:
+    check3=cacl_rice_dos()
+
+    if check3[0]=='ok':
         logger.info('calculating rice dos successful')
+        logger.info(f'result for: {check3[2]}, start at: {check3[1]} and file name: {check3[3]}')
     else:
-        logger.info('calculating rice dos false')
+        logger.info(check3)
     logger.info('..::Done::..')
     print('waiting...')
 
 
 # After every 1 seconds run_task() is called.
 def main(): 
-    start_time = "15:12"
+    start_time = "09:00"
     schedule.every().day.at(start_time).do(quytrinh_thanhlap_ricemap)
     while True:
         schedule.run_pending()

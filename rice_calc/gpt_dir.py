@@ -30,7 +30,7 @@ def S1_process(in_path,out_path):
             check_path=os.path.join(out_path,file_name)
             check_out=os.path.join(out_path,file_out)
             if os.path.exists(check_out) is True:
-                print ("File exist, skip this file, processing next image...")
+                print (f"File {file_out} exist, processing next image...")
             else:
                 cmd = [gpt,
                        graph_path,

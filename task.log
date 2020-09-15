@@ -1,33 +1,20 @@
-2020-09-11 16:37:00,323 - __main__ - INFO - running program
-2020-09-11 16:37:00,576 - __main__ - INFO - search and collect new images...
-2020-09-11 16:37:00,579 - __main__ - INFO - processing image...
-2020-09-11 16:39:00,242 - __main__ - INFO - running program
-2020-09-11 16:39:00,519 - __main__ - INFO - search and collect new images...
-2020-09-11 16:39:00,521 - __main__ - INFO - processing image...
-2020-09-11 16:39:53,497 - __main__ - INFO - calculating rice dos...
-2020-09-11 16:39:53,498 - __main__ - INFO - ..::Done::..
-2020-09-11 16:49:00,483 - __main__ - INFO - running program
-2020-09-11 16:49:00,747 - __main__ - INFO - search and collect new images...
-2020-09-11 16:49:00,750 - __main__ - INFO - processing image...
-2020-09-11 16:49:08,202 - __main__ - INFO - calculating rice dos...
-2020-09-11 16:49:08,203 - __main__ - INFO - ..::Done::..
-2020-09-11 16:59:00,037 - __main__ - INFO - running program
-<<<<<<< HEAD
-2020-09-14 13:48:00,986 - __main__ - INFO - running program
-=======
-2020-09-12 16:59:00,466 - __main__ - INFO - running program
-2020-09-12 17:04:00,617 - __main__ - INFO - running program
-2020-09-12 17:06:00,119 - __main__ - INFO - running program
-2020-09-12 17:11:00,788 - __main__ - INFO - running program
-2020-09-12 17:12:00,131 - __main__ - INFO - running program
-2020-09-12 17:15:00,469 - __main__ - INFO - running program
-2020-09-12 17:17:00,022 - __main__ - INFO - running program
-2020-09-12 17:21:00,935 - __main__ - INFO - running program
-2020-09-12 17:23:00,410 - __main__ - INFO - running program
-2020-09-14 12:32:00,522 - __main__ - INFO - running program
-2020-09-14 12:34:40,033 - __main__ - INFO - running program
-2020-09-14 12:37:50,248 - __main__ - INFO - running program
-2020-09-14 12:44:00,782 - __main__ - INFO - running program
-2020-09-14 13:04:25,603 - __main__ - INFO - search and collect new images...
-2020-09-14 13:07:00,630 - __main__ - INFO - running program
->>>>>>> cf00c7fe55fa24207946be28a456558f508610a2
+2020-09-15 10:21:00,708 - INFO - running program
+2020-09-15 10:21:00,708 - INFO - search and collect new images...
+2020-09-15 10:21:09,259 - INFO - search and collect new images successful
+2020-09-15 10:21:09,259 - INFO - downloaded and stored images in F:\DEV\s1_ricemap\rice_calc\../download_dir with user name looh217
+2020-09-15 10:21:09,259 - INFO - processing image...
+2020-09-15 10:21:09,265 - INFO - processing image successful
+2020-09-15 10:21:09,265 - INFO - calculating rice dos...
+2020-09-15 10:22:49,479 - INFO - calculating rice dos successful
+2020-09-15 10:22:49,479 - INFO - result for: 20200910, start at: 20200624 and file name: 20200910_ricemap_dos.tif
+2020-09-15 10:22:49,479 - INFO - ..::Done::..
+2020-09-15 10:26:00,440 - INFO - running program
+2020-09-15 10:26:00,440 - INFO - search and collect new images...
+2020-09-15 10:26:09,781 - INFO - search and collect new images successful
+2020-09-15 10:26:09,781 - INFO - downloaded and stored images in F:\DEV\s1_ricemap\rice_calc\../download_dir with user name looh217
+2020-09-15 10:26:09,781 - INFO - processing image...
+2020-09-15 10:26:09,783 - INFO - processing image successful
+2020-09-15 10:26:09,783 - INFO - calculating rice dos...
+2020-09-15 10:27:42,430 - INFO - calculating rice dos successful
+2020-09-15 10:27:42,431 - INFO - result for: 20200910, start at: 20200624 and file name: 20200910_ricemap_dos.tif
+2020-09-15 10:27:42,431 - INFO - ..::Done::..

@@ -35,4 +35,4 @@ def s1_dwl():
         user = f.read().splitlines()
     f.close()
     s1collect(download_path,user[0],user[1],box)
-    return
+    return 'ok', download_path,user[0]
