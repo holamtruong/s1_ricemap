@@ -9,6 +9,7 @@ import os
 import numpy as np
 import datetime
 
+
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
@@ -98,6 +99,9 @@ def quytrinh_thanhlap_ricemap():
     if check3[0]=='ok':
         logger.info('calculating rice dos successful')
         logger.info(f'result for: {check3[2]}, start at: {check3[1]} and file name: {check3[3]}')
+        with open('list.log', 'a') as f:
+            f.write(f'{check3[3][0:8]}\n')
+        f.close()
     else:
         logger.info(check3)
     logger.info('..::Done::..')
@@ -106,7 +110,7 @@ def quytrinh_thanhlap_ricemap():
 
 # After every 1 seconds run_task() is called.
 def main(): 
-    start_time = "09:00"
+    start_time = "11:42"
     schedule.every().day.at(start_time).do(quytrinh_thanhlap_ricemap)
     while True:
         schedule.run_pending()
