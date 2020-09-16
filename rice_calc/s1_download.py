@@ -1,6 +1,7 @@
 import datetime
-import os, sys
+import os
 import subprocess as sp
+import sys
 
 
 # call cmd to download
