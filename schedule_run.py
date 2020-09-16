@@ -9,8 +9,8 @@ import os
 import numpy as np
 import datetime
 
-# Setup time to run 'quytrinh_thanhlap_ricemap'
-start_time = "13:08"
+# Setup time to run 'quytrinh_thanhlap_ricemap' at hh:mm everyday
+start_time = "13:22"
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
