@@ -13,8 +13,8 @@ venv/
 
 
 # Run data
-input/*
-output/*
+download_temp/
+ard_store/*
 result/*
 
 # Pycharm config

@@ -9,6 +9,9 @@ import os
 import numpy as np
 import datetime
 
+# Setup time to run 'quytrinh_thanhlap_ricemap'
+start_time = "13:08"
+
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
@@ -31,14 +34,14 @@ def download_img():
 
 
 def preprocessing():
-    input_img = 'download_dir'  # satelite imagery input directory
-    output_img = 'output'  # output ARD directory
+    input_img = 'download_temp'  # satelite imagery input directory
+    output_img = 'ard_store'  # output ARD directory
     ARD.S1_process(input_img, output_img)  # call gpt to processing file
     return 'ok'
 
 
 def cacl_rice_dos():
-    output_img = 'output'
+    output_img = 'ard_store'
     file_list_o = [img for img in os.listdir(output_img) if img[-4:] == '.tif']
     file_list = sorted(file_list_o)
     img_info = os.path.join(output_img, file_list[-1])
@@ -103,12 +106,11 @@ def quytrinh_thanhlap_ricemap():
     else:
         logger.info(check3)
     logger.info('..::Done::..')
-    print('OK. Wait for the next running.')
+    print('OK. Wait for the next running at ' + start_time + ' tomorrow.')
 
 
 # After every 1 seconds run_task() is called.
 def main():
-    start_time = "09:00"
     schedule.every().day.at(start_time).do(quytrinh_thanhlap_ricemap)
     while True:
         schedule.run_pending()
