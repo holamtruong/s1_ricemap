@@ -15,7 +15,7 @@ print(imgList)
 
 # clip all the selected raster files with the Warp option from GDAL:
 for image in imgList:
-    options = gdal.WarpOptions(cutlineDSName=shp_clip, cropToCutline=True, dstNodata=-9999)
+    options = gdal.WarpOptions(cutlineDSName=shp_clip, cropToCutline=False, dstNodata=-9999)
     result_img = gdal.Warp(srcDSOrSrcDSTab=inputPath + image,
                            destNameOrDestDS=outputPath + image[:-4] + '_clip' + image[-4:],
                            options=options)

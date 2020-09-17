@@ -9,7 +9,10 @@ Usage:
 Options:
   -h --help     Show this screen.
   --version     Show version.
+
+Update something by Mr. Soiqualang
 """
+
 from osgeo import gdal, ogr
 from osgeo.gdalconst import *
 import numpy as np
@@ -38,6 +41,10 @@ def zonal_stats(vector_path, raster_path, nodata_value=None, global_src_extent=F
     assert (rds)
     rb = rds.GetRasterBand(1)
     rgt = rds.GetGeoTransform()
+
+    # Get size 1 pixel
+    pixelSizeX = rgt[1]
+    pixelSizeY = -rgt[5]
 
     if nodata_value:
         nodata_value = float(nodata_value)
@@ -116,14 +123,30 @@ def zonal_stats(vector_path, raster_path, nodata_value=None, global_src_extent=F
             )
         )
 
-        feature_stats = {
+        # Setup your result:
+        '''
+         feature_stats = {
             'min': float(masked.min()),
             'mean': float(masked.mean()),
             'max': float(masked.max()),
             'std': float(masked.std()),
             'sum': float(masked.sum()),
             'count': int(masked.count()),
-            'fid': int(feat.GetFID())}
+            'fid': int(feat.GetFID())
+        }
+        '''
+
+        feature_stats = {
+            'fid': int(feat.GetFID()),
+            'maxa': str(int(feat.GetField('maxa'))),
+            'tenxa': str(feat.GetField('tenxa')),
+            'count': int(masked.count()),
+            'sum': float(masked.sum()),
+            'rice_age': '1-10day',
+            'area_ha': float(masked.sum()) * pixelSizeX * pixelSizeY * 0.0001
+        }
+
+
 
         stats.append(feature_stats)
 
@@ -138,7 +161,7 @@ def zonal_stats(vector_path, raster_path, nodata_value=None, global_src_extent=F
 
 if __name__ == "__main__":
     # opts = {'VECTOR': sys.argv[1], 'RASTER': sys.argv[2]}
-    opts = {'VECTOR': 'zonal_area/haugiang_huyen_polygon.shp', 'RASTER': 'demo_data/bentre_man_s1_20191118_reclass.tif'}
+    opts = {'VECTOR': 'zonal_area/haugiang_xa_polygon.shp', 'RASTER': 'demo_data/raster2.tif'}
     stats = zonal_stats(opts['VECTOR'], opts['RASTER'])
 
     try:
