@@ -3,6 +3,7 @@ We develop this tool to automate the Mekong Delta rice mapping. We hope our data
 
 Contact us: https://www.facebook.com/hcm.stac
 
+![](https://github.com/holamtruong/s1_ricemap/blob/master/_draw/screenshot/screenshot_1.PNG?raw=true)
 
 ### Install SNAP Desktop:
     version:  esa-snap_sentinel_windows-x64_7_0.exe
