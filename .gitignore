@@ -16,6 +16,7 @@ venv/
 download_temp/
 ard_store/*
 result/*
+result_temp/*
 
 # Pycharm config
 .idea

@@ -17,6 +17,7 @@ from osgeo import gdal, ogr
 from osgeo.gdalconst import *
 import numpy as np
 import sys
+
 gdal.PushErrorHandler('CPLQuietErrorHandler')
 
 
@@ -142,11 +143,8 @@ def zonal_stats(vector_path, raster_path, nodata_value=None, global_src_extent=F
             'tenxa': str(feat.GetField('tenxa')),
             'count': int(masked.count()),
             'sum': float(masked.sum()),
-            'rice_age': '1-10day',
-            'area_ha': float(masked.sum()) * pixelSizeX * pixelSizeY * 0.0001
+            'area_ha': round(float(masked.sum()) * pixelSizeX * pixelSizeY * 0.0001, 2)
         }
-
-
 
         stats.append(feature_stats)
 
@@ -159,16 +157,20 @@ def zonal_stats(vector_path, raster_path, nodata_value=None, global_src_extent=F
     return stats
 
 
+'''
+
 if __name__ == "__main__":
     # opts = {'VECTOR': sys.argv[1], 'RASTER': sys.argv[2]}
     opts = {'VECTOR': 'zonal_area/haugiang_xa_polygon.shp', 'RASTER': 'demo_data/raster2.tif'}
-    stats = zonal_stats(opts['VECTOR'], opts['RASTER'])
+    # run 'zonal_stats' function:
+    stats_result = zonal_stats(opts['VECTOR'], opts['RASTER'])
 
     try:
         from pandas import DataFrame
 
-        print(DataFrame(stats))
+        print(DataFrame(stats_result))
     except ImportError:
         import json
 
-        print(json.dumps(stats, indent=2))
+        print(json.dumps(stats_result, indent=2))
+'''
