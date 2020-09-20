@@ -28,7 +28,11 @@ age_class = [
 
 # Get input filename in result_temp folder
 list_RasterName = [img for img in os.listdir('../result_temp') if img[-16:] == '_ricemap_dos.tif']
-last_RasterName = list_RasterName[-1]  # get the last date (20180910_ricemap_dos_clip.tif)
+if len(list_RasterName) == 0:
+    print('WARNING: The raster file *_ricemap_dos.tif does not exist. Please check \'result_temp\' folder.')
+else:
+    # get the last date file
+    last_RasterName = list_RasterName[-1]  # (20180910_ricemap_dos_clip.tif)
 
 # Get date of raster:
 year_string = last_RasterName[0:4]
@@ -49,7 +53,8 @@ raster_clip_path = ClipRasterFile(input_file, output_folder, clip_polygon)
 # Copy result to publish folder (use for geoserver)
 src_file = raster_clip_path
 dst_folder = '../result_publish/'
-shutil.copy(src_file, dst_folder)
+copyFile = shutil.copy(src_file, dst_folder)
+print('Copy the result to publish folder: ' + copyFile)
 
 '''
 ****************  Run zonal zonal statistics and send data to database **************** 
@@ -114,14 +119,14 @@ for filename in os.listdir(temp_folder):
     try:
         if os.path.isfile(file_path) or os.path.islink(file_path):
             os.unlink(file_path)
-            print('Clear all temporary files.')
+            print('Clear temporary file :' + file_path)
         elif os.path.isdir(file_path):
             shutil.rmtree(file_path)
-            print('Clear all temporary files.')
+            print('Clear temporary file :' + file_path)
     except Exception as e:
         print('Failed to delete %s. Reason: %s' % (file_path, e))
 
 # Print successful information
 end = time.time()
-print('Finished raster analysis.')
+print('Successfully, finish raster analysis.')
 print('Elapsed time is {} seconds'.format(round(end - start, 2)))
