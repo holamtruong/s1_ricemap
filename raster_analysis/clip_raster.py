@@ -46,7 +46,11 @@ def ClipRasterFile(input_file, output_folder, feature_clip_path):
                            options=options)
     # Clear the result:
     result_img = None
-    print('Finished clipping raster by polygon: ' + outputDir + raster_filename + '_clip' + raster_ext)
+
+    # return result
+    result_path = outputDir + raster_filename + '_clip' + raster_ext
+    print('Finish clipping raster by polygon, saved in: ' + result_path)
+    return result_path
 
 
 '''

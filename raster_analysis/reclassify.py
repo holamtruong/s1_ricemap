@@ -1,21 +1,18 @@
 # Readmore: https://gis.stackexchange.com/questions/163007/raster-reclassify-using-python-gdal-and-numpy
 
 from osgeo import gdal
-import time
 from pathlib import Path
 
 
 def RasterReclass(raster_inputPath, age_value, min_value, max_value):
-    # Start reclassify
-    start = time.time()
     driver = gdal.GetDriverByName('GTiff')
     file = gdal.Open(raster_inputPath)  # '20180910_ricemap_dos_clip.tif'
     file_name = Path(file.GetDescription()).stem  # 20180910_ricemap_dos_clip
     band = file.GetRasterBand(1)
     lista = band.ReadAsArray()
-    print('Start reclassify: ' + file.GetDescription())
 
     # reclassification
+    print('Start reclassify: ' + file.GetDescription())
     for j in range(file.RasterXSize):
         for i in range(file.RasterYSize):
             if min_value <= lista[i, j] <= max_value:
@@ -36,10 +33,7 @@ def RasterReclass(raster_inputPath, age_value, min_value, max_value):
     file2.SetGeoTransform(georef)
     file2.FlushCache()
 
-    # Finished reclassify
-    end = time.time()
-    print('Finished reclassify : ' + result_temp + '. Elapsed time is {} seconds'.format(round(end - start, 2)))
-
+    print("Finish reclassification.")
     return result_temp
 
 # Run reclassification (raster_inputPath ,min_threshold, max_threshold)

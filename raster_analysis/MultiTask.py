@@ -1,14 +1,14 @@
-import json
+import shutil
 import os
+import time
 from pandas import DataFrame
 from raster_analysis.reclassify import RasterReclass
 from raster_analysis.clip_raster import ClipRasterFile
 from raster_analysis.zonal_stats import zonal_stats
 from postgres4Py import pgCRUD
 
-# Declare raster input path
-raster_inputPath = 'result_temp/20180910_ricemap_dos_clip.tif'
-date = '2018-09-10'
+# Start reclassify
+start = time.time()
 
 # Declare age class of rice
 age_class = [
@@ -26,33 +26,47 @@ age_class = [
     {"age": "111-120day", "min": 111, "max": 120},
 ]
 
-# Get input filename in result_temp folder (20180910_ricemap_dos_clip.tif)
-list_img = [img for img in os.listdir('../result_temp') if img[-16:] == '_ricemap_dos.tif']
-last_img = list_img[-1]  # get last date raster file
+# Get input filename in result_temp folder
+list_RasterName = [img for img in os.listdir('../result_temp') if img[-16:] == '_ricemap_dos.tif']
+last_RasterName = list_RasterName[-1]  # get the last date (20180910_ricemap_dos_clip.tif)
 
-# Declare input file, output folder, clip_polygon:
-input_file = '../result_temp/' + last_img
+# Get date of raster:
+year_string = last_RasterName[0:4]
+month_string = last_RasterName[4:6]
+day_string = last_RasterName[6:8]
+date = year_string + '-' + month_string + '-' + day_string  # 2018-09-10
+
+'''
+**************** Run clip a raster file (declare input file, output folder, clip_polygon) **************** 
+'''
+# Declare parameter
+input_file = '../result_temp/' + last_RasterName
 output_folder = '../result_temp/'
 clip_polygon = 'zonal_area/haugiang_tinh_polygon.shp'
+# Execute clip raster by polygon
+raster_clip_path = ClipRasterFile(input_file, output_folder, clip_polygon)
 
-# Run clip a raster file
-ClipRasterFile(input_file, output_folder, clip_polygon)
+# Copy result to publish folder (use for geoserver)
+src_file = raster_clip_path
+dst_folder = '../result_publish/'
+shutil.copy(src_file, dst_folder)
 
-# Get clipped filename in result_temp folder
-clip_img_list = [clipimg for clipimg in os.listdir('../result_temp') if clipimg[-21:] == '_ricemap_dos_clip.tif']
-last_clip_img = clip_img_list[-1]  # get last date of clipped raster file
-
-raster_inputPath = '../result_temp/' + last_clip_img
+'''
+****************  Run zonal zonal statistics and send data to database **************** 
+'''
+# Declare parameter
+raster_inputPath = raster_clip_path
 zonal_polygon = 'zonal_area/haugiang_xa_polygon.shp'
 
+# Each 'rice age' class do a zonal statistics
 for x_class in age_class:
     print(x_class)
     # Run raster reclassification
-    rs_relass_path = RasterReclass(raster_inputPath, x_class["age"], x_class["min"], x_class["max"])
-    # print(rs_relass_path)
+    raster_relass_path = RasterReclass(raster_inputPath, x_class["age"], x_class["min"], x_class["max"])
+    # print(raster_relass_path)
 
     # Run zonal statistics
-    stats_result = zonal_stats(zonal_polygon, rs_relass_path)
+    stats_result = zonal_stats(zonal_polygon, raster_relass_path)
     print(DataFrame(stats_result))
 
     # send statistics result to database in server:
@@ -88,10 +102,26 @@ for x_class in age_class:
         # Run insert into table
         pgCRUD.insert_multi_column('public', 'rice_age_statistics', fieldList, valueList)
 
-    '''
-    # create and write a file (if the specified file does not exist)
-    f = open('../result_temp/' + last_clip_img[0:25] + '_' + x["age"] + '.stadata', "w")
-    stats_result_string = json.dumps(stats_result, indent=4)
-    f.write(stats_result_string)
-    f.close()
-    '''
+        print("Finish insert into table in database.")
+
+'''
+****************  Clear all temporary files in 'result_temp' folder **************** 
+'''
+# Declare path to 'result_temp' folder
+temp_folder = '../result_temp/'
+for filename in os.listdir(temp_folder):
+    file_path = os.path.join(temp_folder, filename)
+    try:
+        if os.path.isfile(file_path) or os.path.islink(file_path):
+            os.unlink(file_path)
+            print('Clear all temporary files.')
+        elif os.path.isdir(file_path):
+            shutil.rmtree(file_path)
+            print('Clear all temporary files.')
+    except Exception as e:
+        print('Failed to delete %s. Reason: %s' % (file_path, e))
+
+# Print successful information
+end = time.time()
+print('Finished raster analysis.')
+print('Elapsed time is {} seconds'.format(round(end - start, 2)))

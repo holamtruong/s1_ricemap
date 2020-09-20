@@ -1,0 +1,686 @@
+[
+    {
+        "fid": 0,
+        "maxa": "31363",
+        "tenxa": "X\u00e3 T\u00e2n Ph\u00fa Th\u1ea1nh",
+        "count": 37608,
+        "sum": 10.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.4
+    },
+    {
+        "fid": 1,
+        "maxa": "31366",
+        "tenxa": "Th\u1ecb Tr\u1ea5n Ng\u00e3 S\u00e1u",
+        "count": 27037,
+        "sum": 0.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.0
+    },
+    {
+        "fid": 2,
+        "maxa": "31369",
+        "tenxa": "X\u00e3 \u0110\u00f4ng Th\u1ea1nh",
+        "count": 28588,
+        "sum": 0.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.0
+    },
+    {
+        "fid": 3,
+        "maxa": "31372",
+        "tenxa": "X\u00e3 Ph\u00fa An",
+        "count": 19992,
+        "sum": 0.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.0
+    },
+    {
+        "fid": 4,
+        "maxa": "31375",
+        "tenxa": "X\u00e3 \u0110\u00f4ng Ph\u00fa",
+        "count": 42677,
+        "sum": 28.0,
+        "rice_age": "1-10day",
+        "area_ha": 1.12
+    },
+    {
+        "fid": 5,
+        "maxa": "31378",
+        "tenxa": "X\u00e3 Ph\u00fa H\u1eefu",
+        "count": 47653,
+        "sum": 3.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.12
+    },
+    {
+        "fid": 6,
+        "maxa": "31379",
+        "tenxa": "X\u00e3 Ph\u00fa T\u00e2n",
+        "count": 46799,
+        "sum": 24.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.96
+    },
+    {
+        "fid": 7,
+        "maxa": "31381",
+        "tenxa": "Th\u1ecb tr\u1ea5n M\u00e1i D\u1ea7m",
+        "count": 43102,
+        "sum": 18.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.72
+    },
+    {
+        "fid": 8,
+        "maxa": "31384",
+        "tenxa": "X\u00e3 \u0110\u00f4ng Ph\u01b0\u1edbc",
+        "count": 55015,
+        "sum": 1.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.04
+    },
+    {
+        "fid": 9,
+        "maxa": "31475",
+        "tenxa": "Ph\u01b0\u1eddng V\u0129nh T\u01b0\u1eddng",
+        "count": 24806,
+        "sum": 1168.0,
+        "rice_age": "1-10day",
+        "area_ha": 46.72
+    },
+    {
+        "fid": 10,
+        "maxa": "31387",
+        "tenxa": "X\u00e3 \u0110\u00f4ng Ph\u01b0\u1edbc A",
+        "count": 41399,
+        "sum": 0.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.0
+    },
+    {
+        "fid": 11,
+        "maxa": "31393",
+        "tenxa": "Th\u1ecb tr\u1ea5n Kinh C\u00f9ng",
+        "count": 32980,
+        "sum": 318.0,
+        "rice_age": "1-10day",
+        "area_ha": 12.72
+    },
+    {
+        "fid": 12,
+        "maxa": "31396",
+        "tenxa": "Th\u1ecb tr\u1ea5n C\u00e2y D\u01b0\u01a1ng",
+        "count": 37360,
+        "sum": 136.0,
+        "rice_age": "1-10day",
+        "area_ha": 5.44
+    },
+    {
+        "fid": 13,
+        "maxa": "31399",
+        "tenxa": "X\u00e3 T\u00e2n B\u00ecnh",
+        "count": 95713,
+        "sum": 97.0,
+        "rice_age": "1-10day",
+        "area_ha": 3.88
+    },
+    {
+        "fid": 14,
+        "maxa": "31402",
+        "tenxa": "X\u00e3 B\u00ecnh Th\u00e0nh",
+        "count": 58839,
+        "sum": 54.0,
+        "rice_age": "1-10day",
+        "area_ha": 2.16
+    },
+    {
+        "fid": 15,
+        "maxa": "31405",
+        "tenxa": "X\u00e3 Th\u1ea1nh H\u00f2a",
+        "count": 83813,
+        "sum": 169.0,
+        "rice_age": "1-10day",
+        "area_ha": 6.76
+    },
+    {
+        "fid": 16,
+        "maxa": "31435",
+        "tenxa": "X\u00e3 Ph\u01b0\u01a1ng Ph\u00fa",
+        "count": 73055,
+        "sum": 2929.0,
+        "rice_age": "1-10day",
+        "area_ha": 117.16
+    },
+    {
+        "fid": 17,
+        "maxa": "31438",
+        "tenxa": "X\u00e3 T\u00e2n Long",
+        "count": 55117,
+        "sum": 89.0,
+        "rice_age": "1-10day",
+        "area_ha": 3.56
+    },
+    {
+        "fid": 18,
+        "maxa": "31441",
+        "tenxa": "Th\u1ecb tr\u1ea5n N\u00e0ng Mau",
+        "count": 13230,
+        "sum": 241.0,
+        "rice_age": "1-10day",
+        "area_ha": 9.64
+    },
+    {
+        "fid": 19,
+        "maxa": "31444",
+        "tenxa": "X\u00e3 V\u1ecb Trung",
+        "count": 55804,
+        "sum": 286.0,
+        "rice_age": "1-10day",
+        "area_ha": 11.44
+    },
+    {
+        "fid": 20,
+        "maxa": "31447",
+        "tenxa": "X\u00e3 V\u1ecb Thu\u1ef7",
+        "count": 45596,
+        "sum": 507.0,
+        "rice_age": "1-10day",
+        "area_ha": 20.28
+    },
+    {
+        "fid": 21,
+        "maxa": "31477",
+        "tenxa": "X\u00e3 Long Tr\u1ecb",
+        "count": 49674,
+        "sum": 3376.0,
+        "rice_age": "1-10day",
+        "area_ha": 135.04
+    },
+    {
+        "fid": 22,
+        "maxa": "31450",
+        "tenxa": "X\u00e3 V\u1ecb Th\u1eafng",
+        "count": 50044,
+        "sum": 1811.0,
+        "rice_age": "1-10day",
+        "area_ha": 72.44
+    },
+    {
+        "fid": 23,
+        "maxa": "31453",
+        "tenxa": "X\u00e3 V\u0129nh Thu\u1eadn T\u00e2y",
+        "count": 57482,
+        "sum": 254.0,
+        "rice_age": "1-10day",
+        "area_ha": 10.16
+    },
+    {
+        "fid": 24,
+        "maxa": "31456",
+        "tenxa": "X\u00e3 V\u0129nh Trung",
+        "count": 81700,
+        "sum": 116.0,
+        "rice_age": "1-10day",
+        "area_ha": 4.64
+    },
+    {
+        "fid": 25,
+        "maxa": "31459",
+        "tenxa": "X\u00e3 V\u0129nh T\u01b0\u1eddng",
+        "count": 84851,
+        "sum": 195.0,
+        "rice_age": "1-10day",
+        "area_ha": 7.8
+    },
+    {
+        "fid": 26,
+        "maxa": "31462",
+        "tenxa": "X\u00e3 V\u1ecb \u0110\u00f4ng",
+        "count": 75037,
+        "sum": 9.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.36
+    },
+    {
+        "fid": 27,
+        "maxa": "31465",
+        "tenxa": "X\u00e3 V\u1ecb Thanh",
+        "count": 49980,
+        "sum": 0.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.0
+    },
+    {
+        "fid": 28,
+        "maxa": "31468",
+        "tenxa": "X\u00e3 V\u1ecb B\u00ecnh",
+        "count": 52920,
+        "sum": 3.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.12
+    },
+    {
+        "fid": 29,
+        "maxa": "31471",
+        "tenxa": "Ph\u01b0\u1eddng Thu\u1eadn An",
+        "count": 30030,
+        "sum": 4268.0,
+        "rice_age": "1-10day",
+        "area_ha": 170.72
+    },
+    {
+        "fid": 30,
+        "maxa": "31472",
+        "tenxa": "Ph\u01b0\u1eddng Tr\u00e0 L\u1ed3ng",
+        "count": 7645,
+        "sum": 226.0,
+        "rice_age": "1-10day",
+        "area_ha": 9.04
+    },
+    {
+        "fid": 31,
+        "maxa": "31473",
+        "tenxa": "Ph\u01b0\u1eddng B\u00ecnh Th\u1ea1nh",
+        "count": 32560,
+        "sum": 1338.0,
+        "rice_age": "1-10day",
+        "area_ha": 53.52
+    },
+    {
+        "fid": 32,
+        "maxa": "31474",
+        "tenxa": "X\u00e3 Long B\u00ecnh",
+        "count": 48043,
+        "sum": 3286.0,
+        "rice_age": "1-10day",
+        "area_ha": 131.44
+    },
+    {
+        "fid": 33,
+        "maxa": "31478",
+        "tenxa": "X\u00e3 Long Tr\u1ecb A",
+        "count": 48597,
+        "sum": 8401.0,
+        "rice_age": "1-10day",
+        "area_ha": 336.04
+    },
+    {
+        "fid": 34,
+        "maxa": "31480",
+        "tenxa": "X\u00e3 Long Ph\u00fa",
+        "count": 65842,
+        "sum": 12077.0,
+        "rice_age": "1-10day",
+        "area_ha": 483.08
+    },
+    {
+        "fid": 35,
+        "maxa": "31481",
+        "tenxa": "X\u00e3 T\u00e2n Ph\u00fa",
+        "count": 71013,
+        "sum": 12923.0,
+        "rice_age": "1-10day",
+        "area_ha": 516.92
+    },
+    {
+        "fid": 36,
+        "maxa": "31483",
+        "tenxa": "X\u00e3 Thu\u1eadn H\u01b0ng",
+        "count": 59658,
+        "sum": 2552.0,
+        "rice_age": "1-10day",
+        "area_ha": 102.08
+    },
+    {
+        "fid": 37,
+        "maxa": "31484",
+        "tenxa": "X\u00e3 Thu\u1eadn H\u00f2a",
+        "count": 72437,
+        "sum": 8380.0,
+        "rice_age": "1-10day",
+        "area_ha": 335.2
+    },
+    {
+        "fid": 38,
+        "maxa": "31486",
+        "tenxa": "X\u00e3 V\u0129nh Thu\u1eadn \u0110\u00f4ng",
+        "count": 76919,
+        "sum": 724.0,
+        "rice_age": "1-10day",
+        "area_ha": 28.96
+    },
+    {
+        "fid": 39,
+        "maxa": "31489",
+        "tenxa": "Th\u1ecb tr\u1ea5n V\u0129nh Vi\u1ec5n",
+        "count": 101054,
+        "sum": 7901.0,
+        "rice_age": "1-10day",
+        "area_ha": 316.04
+    },
+    {
+        "fid": 40,
+        "maxa": "31490",
+        "tenxa": "X\u00e3 V\u0129nh Vi\u1ec5n A",
+        "count": 70367,
+        "sum": 255.0,
+        "rice_age": "1-10day",
+        "area_ha": 10.2
+    },
+    {
+        "fid": 41,
+        "maxa": "31359",
+        "tenxa": "Th\u1ecb tr\u1ea5n R\u1ea1ch G\u00f2i",
+        "count": 28361,
+        "sum": 1.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.04
+    },
+    {
+        "fid": 42,
+        "maxa": "31492",
+        "tenxa": "X\u00e3 L\u01b0\u01a1ng T\u00e2m",
+        "count": 75462,
+        "sum": 99.0,
+        "rice_age": "1-10day",
+        "area_ha": 3.96
+    },
+    {
+        "fid": 43,
+        "maxa": "31493",
+        "tenxa": "X\u00e3 L\u01b0\u01a1ng Ngh\u0129a",
+        "count": 75405,
+        "sum": 48.0,
+        "rice_age": "1-10day",
+        "area_ha": 1.92
+    },
+    {
+        "fid": 44,
+        "maxa": "31318",
+        "tenxa": "Ph\u01b0\u1eddng I",
+        "count": 1814,
+        "sum": 0.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.0
+    },
+    {
+        "fid": 45,
+        "maxa": "31321",
+        "tenxa": "Ph\u01b0\u1eddng III",
+        "count": 33704,
+        "sum": 163.0,
+        "rice_age": "1-10day",
+        "area_ha": 6.52
+    },
+    {
+        "fid": 46,
+        "maxa": "31324",
+        "tenxa": "Ph\u01b0\u1eddng IV",
+        "count": 19901,
+        "sum": 30.0,
+        "rice_age": "1-10day",
+        "area_ha": 1.2
+    },
+    {
+        "fid": 47,
+        "maxa": "31327",
+        "tenxa": "Ph\u01b0\u1eddng V",
+        "count": 19795,
+        "sum": 15.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.6
+    },
+    {
+        "fid": 48,
+        "maxa": "31330",
+        "tenxa": "Ph\u01b0\u1eddng VII",
+        "count": 15436,
+        "sum": 10.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.4
+    },
+    {
+        "fid": 49,
+        "maxa": "31333",
+        "tenxa": "X\u00e3 V\u1ecb T\u00e2n",
+        "count": 57064,
+        "sum": 14.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.56
+    },
+    {
+        "fid": 50,
+        "maxa": "31336",
+        "tenxa": "X\u00e3 Ho\u1ea3 L\u1ef1u",
+        "count": 42467,
+        "sum": 58.0,
+        "rice_age": "1-10day",
+        "area_ha": 2.32
+    },
+    {
+        "fid": 51,
+        "maxa": "31429",
+        "tenxa": "X\u00e3 Hi\u1ec7p H\u01b0ng",
+        "count": 135613,
+        "sum": 1234.0,
+        "rice_age": "1-10day",
+        "area_ha": 49.36
+    },
+    {
+        "fid": 52,
+        "maxa": "31338",
+        "tenxa": "X\u00e3 T\u00e2n Ti\u1ebfn",
+        "count": 46755,
+        "sum": 75.0,
+        "rice_age": "1-10day",
+        "area_ha": 3.0
+    },
+    {
+        "fid": 53,
+        "maxa": "31339",
+        "tenxa": "X\u00e3 Ho\u1ea3 Ti\u1ebfn",
+        "count": 59946,
+        "sum": 298.0,
+        "rice_age": "1-10day",
+        "area_ha": 11.92
+    },
+    {
+        "fid": 54,
+        "maxa": "31340",
+        "tenxa": "Ph\u01b0\u1eddng Ng\u00e3 B\u1ea3y",
+        "count": 11232,
+        "sum": 11.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.44
+    },
+    {
+        "fid": 55,
+        "maxa": "31341",
+        "tenxa": "Ph\u01b0\u1eddng L\u00e1i Hi\u1ebfu",
+        "count": 25148,
+        "sum": 6.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.24
+    },
+    {
+        "fid": 56,
+        "maxa": "31342",
+        "tenxa": "Th\u1ecb tr\u1ea5n M\u1ed9t Ng\u00e0n",
+        "count": 20361,
+        "sum": 56.0,
+        "rice_age": "1-10day",
+        "area_ha": 2.24
+    },
+    {
+        "fid": 57,
+        "maxa": "31343",
+        "tenxa": "Ph\u01b0\u1eddng Hi\u1ec7p Th\u00e0nh",
+        "count": 30322,
+        "sum": 437.0,
+        "rice_age": "1-10day",
+        "area_ha": 17.48
+    },
+    {
+        "fid": 58,
+        "maxa": "31344",
+        "tenxa": "X\u00e3 Hi\u1ec7p L\u1ee3i",
+        "count": 29834,
+        "sum": 305.0,
+        "rice_age": "1-10day",
+        "area_ha": 12.2
+    },
+    {
+        "fid": 59,
+        "maxa": "31345",
+        "tenxa": "X\u00e3 T\u00e2n Ho\u00e0",
+        "count": 56640,
+        "sum": 18.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.72
+    },
+    {
+        "fid": 60,
+        "maxa": "31346",
+        "tenxa": "Th\u1ecb tr\u1ea5n B\u1ea3y Ng\u00e0n",
+        "count": 29225,
+        "sum": 0.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.0
+    },
+    {
+        "fid": 61,
+        "maxa": "31348",
+        "tenxa": "X\u00e3 Tr\u01b0\u1eddng Long T\u00e2y",
+        "count": 55916,
+        "sum": 1176.0,
+        "rice_age": "1-10day",
+        "area_ha": 47.04
+    },
+    {
+        "fid": 62,
+        "maxa": "31351",
+        "tenxa": "X\u00e3 Tr\u01b0\u1eddng Long A",
+        "count": 70232,
+        "sum": 9.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.36
+    },
+    {
+        "fid": 63,
+        "maxa": "31357",
+        "tenxa": "X\u00e3 Nh\u01a1n Ngh\u0129a A",
+        "count": 39882,
+        "sum": 65.0,
+        "rice_age": "1-10day",
+        "area_ha": 2.6
+    },
+    {
+        "fid": 64,
+        "maxa": "31432",
+        "tenxa": "X\u00e3 T\u00e2n Ph\u01b0\u1edbc H\u01b0ng",
+        "count": 116718,
+        "sum": 243.0,
+        "rice_age": "1-10day",
+        "area_ha": 9.72
+    },
+    {
+        "fid": 65,
+        "maxa": "31360",
+        "tenxa": "X\u00e3 Th\u1ea1nh Xu\u00e2n",
+        "count": 43857,
+        "sum": 112.0,
+        "rice_age": "1-10day",
+        "area_ha": 4.48
+    },
+    {
+        "fid": 66,
+        "maxa": "31362",
+        "tenxa": "Th\u1ecb tr\u1ea5n C\u00e1i T\u1eafc",
+        "count": 18446,
+        "sum": 0.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.0
+    },
+    {
+        "fid": 67,
+        "maxa": "31408",
+        "tenxa": "X\u00e3 Long Th\u1ea1nh",
+        "count": 63950,
+        "sum": 42.0,
+        "rice_age": "1-10day",
+        "area_ha": 1.68
+    },
+    {
+        "fid": 68,
+        "maxa": "31411",
+        "tenxa": "X\u00e3 \u0110\u1ea1i Th\u00e0nh",
+        "count": 56986,
+        "sum": 46.0,
+        "rice_age": "1-10day",
+        "area_ha": 1.84
+    },
+    {
+        "fid": 69,
+        "maxa": "31414",
+        "tenxa": "X\u00e3 T\u00e2n Th\u00e0nh",
+        "count": 39557,
+        "sum": 12.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.48
+    },
+    {
+        "fid": 70,
+        "maxa": "31417",
+        "tenxa": "X\u00e3 Ph\u1ee5ng Hi\u1ec7p",
+        "count": 45609,
+        "sum": 474.0,
+        "rice_age": "1-10day",
+        "area_ha": 18.96
+    },
+    {
+        "fid": 71,
+        "maxa": "31420",
+        "tenxa": "X\u00e3 H\u00f2a M\u1ef9",
+        "count": 124484,
+        "sum": 1289.0,
+        "rice_age": "1-10day",
+        "area_ha": 51.56
+    },
+    {
+        "fid": 72,
+        "maxa": "31423",
+        "tenxa": "X\u00e3 H\u00f2a An",
+        "count": 121863,
+        "sum": 1185.0,
+        "rice_age": "1-10day",
+        "area_ha": 47.4
+    },
+    {
+        "fid": 73,
+        "maxa": "31426",
+        "tenxa": "X\u00e3 Ph\u01b0\u01a1ng B\u00ecnh",
+        "count": 141278,
+        "sum": 2138.0,
+        "rice_age": "1-10day",
+        "area_ha": 85.52
+    },
+    {
+        "fid": 74,
+        "maxa": "31433",
+        "tenxa": "Th\u1ecb tr\u1ea5n B\u00fang T\u00e0u",
+        "count": 27070,
+        "sum": 15.0,
+        "rice_age": "1-10day",
+        "area_ha": 0.6
+    },
+    {
+        "fid": 75,
+        "maxa": "31495",
+        "tenxa": "X\u00e3 X\u00e0 Phi\u00ean",
+        "count": 120019,
+        "sum": 5877.0,
+        "rice_age": "1-10day",
+        "area_ha": 235.08
+    }
+]
