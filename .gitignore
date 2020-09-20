@@ -17,6 +17,7 @@ download_temp/
 ard_store/*
 result/*
 result_temp/*
+result_publish/*
 
 
 # Pycharm config
