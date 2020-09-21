@@ -6,9 +6,15 @@ from raster_analysis.reclassify import RasterReclass
 from raster_analysis.clip_raster import ClipRasterFile
 from raster_analysis.zonal_stats import zonal_stats
 from postgres4Py import pgCRUD
+from raster_analysis.GeoUtility import *
 
 # Start reclassify
 start = time.time()
+
+
+'''
+**************** STEP 0 : Get information **************** 
+'''
 
 # Declare age class of rice
 age_class = [
@@ -40,8 +46,17 @@ month_string = last_RasterName[4:6]
 day_string = last_RasterName[6:8]
 date = year_string + '-' + month_string + '-' + day_string  # 2018-09-10
 
+
+
+
+
+
+
+
+
+
 '''
-**************** Run clip a raster file (declare input file, output folder, clip_polygon) **************** 
+**************** STEP 1 : Run clip a raster file (declare input file, output folder, clip_polygon) **************** 
 '''
 # Declare parameter
 input_file = '../result_temp/' + last_RasterName
@@ -56,8 +71,36 @@ dst_folder = '../result_publish/'
 copyFile = shutil.copy(src_file, dst_folder)
 print('Copy the result to publish folder: ' + copyFile)
 
+
+
+
+
 '''
-****************  Run zonal zonal statistics and send data to database **************** 
+**************** STEP 2: Insert data into 'ricemap_list' table in database **************** 
+'''
+# Get WKT of study area
+the_geom = export2wkt('../config/study_area/tile.shp')
+# Get result file to publish in geoserver
+location = copyFile[-29:]  # 20180910_ricemap_dos_clip.tif
+# Get ingestion (timestamp)
+ingestion = date + ' 07:00:00'
+# Get bbox
+bbox = get_bounding_box('../config/study_area/tile.shp')
+# Insert to table
+# Run insert into table
+fieldList_rmp = ['location', 'ingestion', 'bbox']
+valueList_rmp = [location, ingestion, bbox]
+pgCRUD.insert_multi_column_and_geometryPolygon('public', 'ricemap_list', fieldList_rmp, valueList_rmp, the_geom, 32648)
+print("Finish insert into ricemap_list table in database.")
+
+
+
+
+
+
+
+'''
+**************** STEP 3:  Run zonal zonal statistics and send data to database **************** 
 '''
 # Declare parameter
 raster_inputPath = raster_clip_path
@@ -109,8 +152,15 @@ for x_class in age_class:
 
         print("Finish insert into table in database.")
 
+
+
+
+
+
+
+
 '''
-****************  Clear all temporary files in 'result_temp' folder **************** 
+****************  STEP FINAL: Clear all temporary files in 'result_temp' folder **************** 
 '''
 # Declare path to 'result_temp' folder
 temp_folder = '../result_temp/'

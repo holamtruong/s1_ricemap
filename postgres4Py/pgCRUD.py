@@ -151,6 +151,52 @@ def insert_multi_column(schema, table, list_col, list_value):
             conn.close()
 
 
+# insert into multi column and Geometry
+def insert_multi_column_and_geometryPolygon(schema, table, list_col, list_value, wkt_poylygon, srid):
+    conn = None
+    try:
+        # read connection parameters
+        params = pgDBConfig.config()
+
+        # connect to the PostgreSQL server
+        print('Connecting to the PostgreSQL database...')
+        conn = psycopg2.connect(**params)
+
+        # create a cursor
+        cur = conn.cursor()
+
+        # get list of columns, values
+        fieldList = str()
+        valueList = str()
+        for field in list_col:
+            fieldList = fieldList + ", " + field
+        for value in list_value:
+            valueList = valueList + ", \'" + str(value) + "\'"
+
+        # create a SQL command
+        sql_command = '''INSERT INTO {}.{} (the_geom, {}) 
+                      VALUES ( ST_GeomFromText('{}',{}), {});'''.format(str(schema), str(table),
+                                                                        str(fieldList[1:]), wkt_poylygon, srid,
+                                                                        str(valueList[1:]))
+        print(sql_command)
+
+        # execute a statement
+        cur.execute(sql_command)
+
+        # commit the changes to the database
+        conn.commit()
+
+        # count successfully result
+        print(cur.rowcount, "Record inserted successfully into the table.")
+        # close the communication with the PostgreSQL
+        cur.close()
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
+
+
 # insert into multi column with list key-value
 def insert_multi_column_keyvalue(schema, table, list_col, list_value):
     conn = None
@@ -193,12 +239,8 @@ def insert_multi_column_keyvalue(schema, table, list_col, list_value):
         if conn is not None:
             conn.close()
 
+
 if __name__ == '__main__':
-
-
-
-
-
     '''
     list_col = ['name', 'properties', 'weight', 'birthday']
     list_val = ['a small dog', 'Bad dog', 4.543113, '2017-01-21']
