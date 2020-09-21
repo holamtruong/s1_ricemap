@@ -33,12 +33,11 @@ def s1_dwl():
     download_path = os.path.join(dirname, "../download_temp")
     user_path = os.path.join(dirname, "../rice_calc/top_secret.TXT")
     box = os.path.join(dirname, '../rice_calc/polygon.json')
-    start_path = os.path.join(dirname, "../list.data")
-    with open(start_path) as f:
-        start_day = f.read().splitlines()
-    f.close()
+    ard_folder = os.path.join(dirname, "../ard_store")
+    check_list = [img for img in os.listdir(ard_folder) if img[-4:] == '.tif']
+    start_check = check_list[-1][0:8]
     with open(user_path) as f:
         user = f.read().splitlines()
     f.close()
-    s1collect(download_path, start_day[-1], user[0], user[1], box)
+    s1collect(download_path, start_check, user[0], user[1], box)
     return 'ok', download_path, user[0]
