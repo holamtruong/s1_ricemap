@@ -13,7 +13,7 @@ venv/
 
 
 # Run data
-download_temp/
+download_temp/*
 ard_store/*
 result/*
 result_temp/*
@@ -22,3 +22,6 @@ result_publish/*
 
 # Pycharm config
 .idea
+
+# log file
+.log

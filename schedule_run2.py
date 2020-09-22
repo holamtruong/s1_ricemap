@@ -7,7 +7,7 @@ import rice_calc.s1_download as download
 
 
 # Setup time to run 'quytrinh_thanhlap_ricemap' at hh:mm everyday
-start_time = "13:22"
+start_time = "11:27"
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
