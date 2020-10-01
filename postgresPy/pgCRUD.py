@@ -3,7 +3,7 @@ Some functions to CRUD Postgres database by Truong Ho
 '''
 
 import psycopg2
-from postgres4Py import pgDBConfig
+from postgresPy import pgDBConfig
 
 
 # Check PostgreSQL database version

@@ -1,3 +1,4 @@
+alembic==1.4.3
 attrs==20.1.0
 beautifulsoup4==4.9.1
 certifi==2020.6.20
@@ -7,13 +8,19 @@ click-plugins==1.1.1
 cligj==0.5.0
 docopt==0.6.2
 Fiona @ file:///C:/Users/holam/pipwin/Fiona-1.8.13-cp38-cp38-win_amd64.whl
+Flask-Migrate==2.5.3
+Flask-SQLAlchemy==2.4.4
 GDAL @ file:///E:/DEV/s1_ricemap/document/install_gdal_on_windows/GDAL-3.1.2-cp38-cp38-win_amd64.whl
 geojson==2.5.0
 geomet==0.2.1.post1
 geopandas @ file:///C:/Users/holam/pipwin/geopandas-0.8.1-py3-none-any.whl
 html2text==2020.1.16
 idna==2.10
+itsdangerous==1.1.0
+Jinja2==2.11.2
 Js2Py==0.70
+Mako==1.1.3
+MarkupSafe==1.1.1
 munch==2.5.0
 numpy @ file:///C:/Users/holam/pipwin/numpy-1.19.1%2Bmkl-cp38-cp38-win_amd64.whl
 packaging==20.4
@@ -26,6 +33,7 @@ PyPrind==2.11.2
 pyproj @ file:///C:/Users/holam/pipwin/pyproj-2.6.1.post1-cp38-cp38-win_amd64.whl
 pySmartDL==1.3.3
 python-dateutil==2.8.1
+python-editor==1.0.4
 pytz==2020.1
 requests==2.24.0
 Rtree @ file:///C:/Users/holam/pipwin/Rtree-0.9.4-cp38-cp38-win_amd64.whl
@@ -34,6 +42,8 @@ sentinelsat==0.14
 Shapely==1.7.1
 six==1.15.0
 soupsieve==2.0.1
+SQLAlchemy==1.3.19
 tqdm==4.49.0
 tzlocal==2.1
 urllib3==1.25.10
+Werkzeug==1.0.1

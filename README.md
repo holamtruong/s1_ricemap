@@ -42,8 +42,7 @@ Contact us: https://www.facebook.com/hcm.stac
 ### Check GDAL version in commandline	
 	gdalinfo --version
     
-    
-    
+
 ## License - ISC
 
 Copyright (c) 2020 - STAC team.

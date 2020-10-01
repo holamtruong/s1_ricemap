@@ -5,7 +5,7 @@ from pandas import DataFrame
 from raster_analysis.reclassify import RasterReclass
 from raster_analysis.clip_raster import ClipRasterFile
 from raster_analysis.zonal_stats import zonal_stats
-from postgres4Py import pgCRUD
+from postgresPy import pgCRUD
 from raster_analysis.GeoUtility import *
 
 # Start reclassify
