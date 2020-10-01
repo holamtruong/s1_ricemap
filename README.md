@@ -5,6 +5,9 @@ Contact us: https://www.facebook.com/hcm.stac
 
 ![](https://github.com/holamtruong/s1_ricemap/blob/master/_draw/screenshot/screenshot_1.PNG?raw=true)
 
+![](https://github.com/holamtruong/s1_ricemap/blob/master/_draw/screenshot/screenshot_2.gif?raw=true)
+
+
 ### Install SNAP Desktop:
     version:  esa-snap_sentinel_windows-x64_7_0.exe
     path: C:/Program Files/snap/bin/gpt.exe
