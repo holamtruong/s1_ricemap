@@ -4,16 +4,6 @@ import numpy as np
 import datetime
 
 def cacl_rice_dos(list_str_day, day_input, file_list,result_path):
-    '''
-        output_img = 'ard_store'
-        file_list_o = [img for img in os.listdir(output_img) if img[-4:] == '.tif']
-        file_list = sorted(file_list_o)
-        img_info = os.path.join(output_img, file_list[-1])
-        old_info = modules.get_img_info(img_info)
-        choose_list = np.array([])
-        listday = modules.date(file_list)
-        list_str_day = modules.strday(listday)
-    '''
     output_img = 'ard_store'
     day_in_date = datetime.datetime(int(day_input[0:4]), int(day_input[4:6]), int(day_input[6:8]))
     start_day = day_in_date - datetime.timedelta(days=140)
@@ -57,7 +47,7 @@ def main():
     list_str_day = modules.strday(listday)
     day_start = modules.find_nearest(list_str_day, int(day_in))
     print('Nearest day of Sentinel-1 data is: '+ day_start)
-    check_name = f'{day_start}_ricemap_dos.tif'
+    check_name = f'{day_start}_ricemap_das.tif'
     check_out = os.path.join(result_path, check_name)
     if os.path.exists(check_out) is True:
         print('result exist')
