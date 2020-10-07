@@ -25,3 +25,5 @@ result_publish/*
 
 # log file
 .log
+
+_draw/document/esa-snap_sentinel_windows-x64_7_0.exe
